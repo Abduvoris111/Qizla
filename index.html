@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+   <div id="app">
+      <h1 class="header__title">{{  title  }}</h1>
+      <button @click="show = !show" class="header__button">
+        <span v-if="show"  class="header__text">Нажми</span>
+        <span v-else="show" class="header__text">Закрой текст</span>
+      </button>
+      <p v-if="!show" class="header__parag">Поздравляю с днем рождения! Пусть твоя жизнь будет насыщенной и яркой, пусть каждый день приносит маленькие и большие радости! Исполнения всех желаний тебе, новых достижений и побед во всех сферах жизни, искренних и теплых отношений с близкими!</p>
+      <img v-if="!show" class="gif" src="./img/gif2.gif" alt="">
+   </div> 
+
+   
+
+
+
+
+
+
+<script>
+    const app= { 
+   data(){
+         return {
+            title: "С днем рождения",
+            show: true,
+            text: ''
+         }
+        }
+    }
+   
+
+   Vue.createApp(app).mount('#app')
+</script>
+
+</body>
+</html>
